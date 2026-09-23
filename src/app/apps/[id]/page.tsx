@@ -4,6 +4,8 @@ import { TApp } from "@/type/app.type";
 import Image from "next/image";
 import Link from "next/link";
 
+
+
 interface IAppDetailsParams {
     params: {
         id: string
@@ -29,7 +31,7 @@ const AppDetails = async ({ params }: IAppDetailsParams) => {
                     <p className="text-gray-400 text-lg">
                         The app you are looking for does not exist.
                     </p>
-                    <Link href="/Linkpps" className="btn btn-primary rounded-xl px-8 mt-4">
+                    <Link href="/apps" className="btn btn-primary rounded-xl px-8 mt-4">
                         Back to Apps
                     </Link>
                 </div>
@@ -125,7 +127,7 @@ const AppDetails = async ({ params }: IAppDetailsParams) => {
                         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 md:p-6">
                             <h2 className="font-bold text-lg md:text-xl mb-5 text-gray-800">Ratings Breakdown</h2>
                             <div className="space-y-4">
-                                {app.ratings.map((rating) => {
+                                {app.ratings.map((rating)=> {
                                     const percent = (rating.count / 5) * 100
                                     return (
                                         <div key={rating.name} className="flex items-center gap-3">
