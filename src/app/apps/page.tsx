@@ -7,7 +7,9 @@ import { getData } from "@/lib/app";
 
 const AppsPages = async () => {
     const data = await getData();
-    console.log(data)
+   if(data.length < 1){
+    <p>Not Found</p>
+   }
     return (
         <div className="my-10 container mx-auto">
             <div className="space-y-3 text-center">
