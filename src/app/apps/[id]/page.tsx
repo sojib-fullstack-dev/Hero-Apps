@@ -26,9 +26,9 @@ const AppDetails = async ({ params }: IAppDetailsParams) => {
                     <p className="text-gray-400 text-lg">
                         The app you are looking for does not exist.
                     </p>
-                    <a href="/apps" className="btn btn-primary rounded-xl px-8 mt-4">
+                    <Link href="/Linkpps" className="btn btn-primary rounded-xl px-8 mt-4">
                         Back to Apps
-                    </a>
+                    </Link>
                 </div>
             </div>
         )
