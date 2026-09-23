@@ -4,7 +4,10 @@ import { TApp } from "@/type/app.type";
 import Image from "next/image";
 import Link from "next/link";
 
-
+interface IRatingItem {
+  name: string;
+  count: number;
+}
 
 interface IAppDetailsParams {
     params: {
@@ -127,7 +130,7 @@ const AppDetails = async ({ params }: IAppDetailsParams) => {
                         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 md:p-6">
                             <h2 className="font-bold text-lg md:text-xl mb-5 text-gray-800">Ratings Breakdown</h2>
                             <div className="space-y-4">
-                                {app.ratings.map((rating)=> {
+                                {app.ratings.map((rating:IRatingItem)=> {
                                     const percent = (rating.count / 5) * 100
                                     return (
                                         <div key={rating.name} className="flex items-center gap-3">
