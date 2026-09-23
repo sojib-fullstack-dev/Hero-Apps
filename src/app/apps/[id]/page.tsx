@@ -13,6 +13,9 @@ interface IAppDetailsParams {
 const AppDetails = async ({ params }: IAppDetailsParams) => {
     const { id } = await params;
     const allApps = await getData()
+    if(!allApps){
+        return <p>No Apps Found</p>
+    }
     const app: TApp = allApps.find((app: TApp) => app.id === Number(id))
 
     if (!app) {
