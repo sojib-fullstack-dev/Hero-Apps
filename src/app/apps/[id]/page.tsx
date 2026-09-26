@@ -1,3 +1,4 @@
+
 import InstallBtn from "@/app/components/AppsBtn/InstallBtn";
 import { getData } from "@/lib/app";
 import { TApp } from "@/type/app.type";
@@ -10,17 +11,17 @@ interface IRatingItem {
 }
 
 interface IAppDetailsParams {
-    params: {
-        id: string
-    }
+    params: Promise<{
+    id: string;
+  }>;
 }
 
 const AppDetails = async ({ params }: IAppDetailsParams) => {
-    const { id } = await params;
+   const { id } = await params;
     const allApps = await getData()
-    // if(!allApps){
-    //     return <p>No Apps Found</p>
-    // }
+    if(!allApps){
+        return <p>No Apps Found</p>
+    }
     const app= allApps.find((app: TApp) => app.id === Number(id))
 
     if (!app) {
